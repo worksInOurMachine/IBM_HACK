@@ -13,7 +13,6 @@ parentPort.on('message', (message) => {
 function setupReporting() {
     console.log('[Reporting Worker] Started. Waiting for stats...');
 
-    // Use a format string approach for cleaner console output
     rxPort.on('message', (msg) => {
         if (msg.type === 'STATS_SNAPSHOT' && msg.data) {
             logCounter++;
@@ -30,10 +29,6 @@ function printReport(stats) {
         totalRollingSpending
     } = stats;
 
-    // Clear console or just print separators to make it readable.
-    // For a streaming server log, simple delimited output is best.
-
-    // Formatting currency and numbers
     const formatCurrent = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(totalRollingSpending);
     const formatNumber = new Intl.NumberFormat('en-IN').format;
 
