@@ -5,7 +5,7 @@ Welcome to the Real-Time Financial Transaction Processing Engine! This project s
 
 Our engine is capable of processing thousands of transactions per second across thousands of distinct accounts, all while maintaining a rolling "10-minute window" to monitor live activity and spending without crashing or freezing.
 
-## 🧠 Why we did it this way (The Hackathon Challenge)
+## 🧠 Why we did it this way
 Modern banking systems face a heavy burden: millions of transactions flood in, and the system must approve, process, and track them instantaneously without delays or memory leaks.
 
 Node.js is traditionally single-threaded, meaning that a massive loop of heavy math could crash or slow down the whole application. To solve this efficiently and prove true backend engineering concepts, we bypassed the single-threaded limitation by building a **Multi-Threaded Architecture** using Node.js `worker_threads` and `MessageChannel`.
